@@ -25,7 +25,7 @@ func main() {
 	srvr := &http.Server{
 		ReadTimeout:  time.Second * 15,
 		WriteTimeout: time.Second * 15,
-		Addr:         ":8105",
+		Addr:         ":8106",
 		Handler:      handles.SetupRoutes(*clientId, *clientSecrt, *security),
 	}
 

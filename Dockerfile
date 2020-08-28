@@ -36,6 +36,6 @@ COPY views views
 
 RUN mkdir -p /views/_shared
 
-EXPOSE 8105
+EXPOSE 8106
 
 ENTRYPOINT [ "./rtc" ]
