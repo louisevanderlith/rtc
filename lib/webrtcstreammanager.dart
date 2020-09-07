@@ -148,7 +148,8 @@ class WebRtcStreamManager {
     receivingRtcPeerConnections[originClientId] = receivingRtcPeerConnection;
 
     receivingRtcPeerConnection.setRemoteDescription(offer);
-    receivingRtcPeerConnection.createAnswer({}).then((RtcSessionDescription description) {
+    receivingRtcPeerConnection
+        .createAnswer({}).then((RtcSessionDescription description) {
       //receivingRtcPeerConnection.setLocalDescription(description);
       sendMessage({
         "type": "answer",

@@ -1,7 +1,7 @@
 library cachingusermediaretriever;
 
-import "dart:html";
 import "dart:async";
+import "dart:html";
 
 class CachingUserMediaRetriever {
   MediaStream mediaStream;
