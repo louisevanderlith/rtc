@@ -4,6 +4,6 @@ go 1.13
 
 require (
 	github.com/gorilla/mux v1.7.4
-	github.com/louisevanderlith/droxolite v1.12.7
-	github.com/louisevanderlith/kong v1.7.3
+	github.com/louisevanderlith/droxolite v1.14.0
+	github.com/louisevanderlith/kong v1.8.6
 )

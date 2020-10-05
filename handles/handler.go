@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-func SetupRoutes(clnt, scrt, securityUrl string) http.Handler {
+func SetupRoutes(clnt, scrt, securityUrl, managerUrl string) http.Handler {
 	tmpl, err := drx.LoadTemplate("./views")
 
 	if err != nil {
@@ -20,7 +20,7 @@ func SetupRoutes(clnt, scrt, securityUrl string) http.Handler {
 	fs := http.FileServer(distPath)
 	r.PathPrefix("/dist/").Handler(http.StripPrefix("/dist/", fs))
 
-	clntIns := middle.NewClientInspector(clnt, scrt, http.DefaultClient, securityUrl, "")
+	clntIns := middle.NewClientInspector(clnt, scrt, http.DefaultClient, securityUrl, managerUrl, "")
 	r.HandleFunc("/", clntIns.Middleware(Index(tmpl), make(map[string]bool))).Methods(http.MethodGet)
 
 	//r.HandleFunc("/blog", kong.ClientMiddleware(http.DefaultClient, clnt, scrt, secureUrl, "", blog.GetArticles(tmpl), "blog.articles.view")).Methods(http.MethodGet)
